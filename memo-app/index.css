@@ -1,25 +1,129 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-	@font-face {
-		font-family: 'NotoSansKR';
-		src: url(font/NotoSansKR-VariableFont_wght.woff2) format('woff2'),
-			url(font/NotoSansKR-VariableFont_wght.woff) format('woff');
-	}
-
-	html {
-		font-family: 'NotoSansKR', serif, sans-serif, monospace;
-		box-sizing: border-box;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
-	}
+@font-face {
+	font-family: 'NotoSansKR';
+	src: url(font/NotoSansKR-VariableFont_wght.woff2) format('woff2'),
+		url(font/NotoSansKR-VariableFont_wght.woff) format('woff');
 }
 
-@layer components {
+html {
+	font-family: 'NotoSansKR', serif, sans-serif, monospace;
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+h1 {
+	font-size: 2.6rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+p {
+	font-size: 1.4rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	--nav-min-width: 230px;
+	--nav-max-width: 340px;
+	color: white;
+}
+
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+button {
+	display: inline-block;
+	border: none;
+	border-radius: 0.3rem;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.4rem;
+}
+
+.app {
+	display: flex;
+}
+
+nav {
+	background-color: #001220;
+	min-width: var(--nav-min-width);
+	max-width: var(--nav-max-width);
+	width: var(--nav-min-width);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@counter-style nav-counter {
+	system: cyclic;
+	symbols: '\1F3E0''\1F4DD''\2699';
+	suffix: ' ';
+}
+
+.nav-bar__list {
+	list-style-type: nav-counter;
+}
+
+.nav-bar__item {
+	padding: 0.5em 0;
+	font-size: 1.8rem;
+}
+
+.nav-bar__item > a {
+	margin-left: 0.3em;
+	width: inherit;
+	text-decoration: none;
+	outline: none;
+	text-align: center;
+	color: #b3b3b3;
+}
+
+.nav-bar__item > a:hover,
+.nav-bar__item > a:active {
+	color: inherit;
+}
+
+main {
+	background-color: #001c38;
+	min-width: calc(100% - var(--nav-max-width));
+	max-width: calc(100% - var(--nav-min-width));
+	width: calc(100% - var(--nav-min-width));
+	height: 100vh;
+}
+
+.nav-bar__user {
+	margin-bottom: 1.5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-bar__login__button {
+	background-color: #fa4141;
+	padding: 5px auto;
+	width: 75%;
+	height: 30px;
+}
+
+.nav-bar__login__button:hover,
+.nav-bar__login__button:active {
+	background-color: #b90000;
+	padding: 5px auto;
+	width: 75%;
+	height: 30px;
 }

@@ -9,30 +9,46 @@
 		<title>SIMPLE MEMO APP</title>
 	</head>
 	<body>
-		<div id="app">
-			<nav>
-				<ul>
-					<li>
-						<a href="/home">Home</a>
+		<div class="app">
+			<nav id="nav-bar" role="navigation">
+				<ul class="nav-bar__list">
+					<h1 class="nav-bar__header">OFFMEMO</h1>
+					<li class="nav-bar__item">
+						<a href="/home">전체 메모</a>
 					</li>
-					<li>
-						<a href="/menu">Menu</a>
+					<li class="nav-bar__item">
+						<a href="/memo">내 메모</a>
 					</li>
-					<li>
-						<a href="/setting">Setting</a>
+					<li class="nav-bar__item">
+						<a href="/setting">설정</a>
 					</li>
 				</ul>
+				<div class="nav-bar__user">
+					<h2>반갑습니다 {user}님!</h2>
+					<button class="nav-bar__login__button" type="button">Log in</button>
+				</div>
 			</nav>
-			<main>
-				<section class="card-section">
-					<p>여기는 카드 영역</p>
-					<p>This is card area</p>
+			<main id="view">
+				<section class="content__header">
+					<div class="content__header__search">
+						<input type="search" name="q" />
+						<button type="button">Search</button>
+					</div>
+					<button class="content__header__action-link" type="button">작성하기</button>
 				</section>
+				<section class="content__card">
+					<h1>새 메모를 작성해주세요.</h1>
+				</section>
+				<!-- <article class="card-item">
+								<a class="grid-item__link" href="/memo/1">
+									<div class="grid-item__info">
+										<span class="grid-item__name">코딩테스트</span>
+										<span class="grid-item__description">프로그래머스 입문문제 풀기</span>
+									</div>
+								</a>
+							</article> -->
 			</main>
 		</div>
-		<footer>
-			<p><a href="https://github.com/marinarinarina">Visit my github!</a></p>
-		</footer>
 		<!-- <script type="module" src="/src/main.ts"></script> -->
 	</body>
 </html>
