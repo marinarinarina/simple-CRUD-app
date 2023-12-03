@@ -30,8 +30,7 @@ p {
 
 body {
 	margin: 0;
-	--nav-min-width: 230px;
-	--nav-max-width: 340px;
+	background-color: #001c38;
 	color: white;
 }
 
@@ -53,19 +52,27 @@ button {
 	font-size: 1.4rem;
 }
 
+input[type='search'] {
+	height: 2em;
+	color: #b3b3b3;
+}
+
 .app {
 	display: flex;
 }
 
 nav {
 	background-color: #001220;
-	min-width: var(--nav-min-width);
-	max-width: var(--nav-max-width);
-	width: var(--nav-min-width);
+	min-width: 23em;
+	max-width: 34em;
+	width: 23em;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	position: sticky;
+	top: 0%;
+	left: 0%;
 }
 
 @counter-style nav-counter {
@@ -76,6 +83,7 @@ nav {
 
 .nav-bar__list {
 	list-style-type: nav-counter;
+	flex: 3 1;
 }
 
 .nav-bar__item {
@@ -83,7 +91,7 @@ nav {
 	font-size: 1.8rem;
 }
 
-.nav-bar__item > a {
+a {
 	margin-left: 0.3em;
 	width: inherit;
 	text-decoration: none;
@@ -92,21 +100,13 @@ nav {
 	color: #b3b3b3;
 }
 
-.nav-bar__item > a:hover,
-.nav-bar__item > a:active {
+a:hover,
+a:active {
 	color: inherit;
 }
 
-main {
-	background-color: #001c38;
-	min-width: calc(100% - var(--nav-max-width));
-	max-width: calc(100% - var(--nav-min-width));
-	width: calc(100% - var(--nav-min-width));
-	height: 100vh;
-}
-
 .nav-bar__user {
-	margin-bottom: 1.5em;
+	flex: 1 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -115,15 +115,68 @@ main {
 
 .nav-bar__login__button {
 	background-color: #fa4141;
-	padding: 5px auto;
-	width: 75%;
-	height: 30px;
+	padding: 0.5em 5em;
 }
 
 .nav-bar__login__button:hover,
 .nav-bar__login__button:active {
 	background-color: #b90000;
-	padding: 5px auto;
-	width: 75%;
-	height: 30px;
+}
+
+main {
+	width: 100%;
+	height: auto;
+	margin: 0 3em;
+	display: flex;
+	flex-direction: column;
+}
+
+.content__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 2em 0;
+}
+
+.content__header__nav-button {
+	background-color: #fa4141;
+	padding: 0.2em 1em;
+}
+
+.content__header__nav-button:hover,
+.content__header__nav-button:active {
+	background-color: #b90000;
+}
+
+.content__header__modal-button {
+	background-color: #fa4141;
+	padding: 0.5em 3em;
+}
+
+.content__header__modal-button:hover,
+.content__header__modal-button:active {
+	background-color: #b90000;
+}
+
+.content__body {
+	flex-grow: 1;
+}
+
+.content__body > .empty {
+	text-align: center;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+	column-gap: 1em;
+	row-gap: 2em;
+	width: 100%;
+	margin-top: 2em;
+}
+
+@media screen and (max-width: 576px) {
+	.card-container {
+		grid-template-columns: repeat(1, minmax(250px, 1fr));
+	}
 }
