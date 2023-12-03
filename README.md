@@ -2,12 +2,14 @@
 
 A Simple CRUD board web app with Vite, PostCSS and TypeScript.
 
+This repository is client-side. The server-side repository is [here](https://github.com/marinarinarina/simple-CRUD-api).
+
 **This project was made only Browser APIs, not Third-party APIs.**
 
 ## Features
 
 1. Visit this web app on the smartphone or PC.
-2. If you are using a smartphone, You can install in own device to it.
+2. If you are using a smartphone, You can install it in own device.
 3. Your internet connection is flaky? Don't worry! This web app provide a basic offline experience.
 
 ## Technical Features
@@ -19,4 +21,5 @@ A Simple CRUD board web app with Vite, PostCSS and TypeScript.
 ## Tools
 
 - Vite: Building and transforming tool that aims to provide a faster and leaner development experience for modern web projects.
-- PostCSS(included in Vite): A tool for CSS post-processing.
+- PostCSS: A tool for CSS post-processing. (included in the Vite)
+
